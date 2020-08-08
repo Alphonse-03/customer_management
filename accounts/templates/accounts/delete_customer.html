@@ -1,0 +1,12 @@
+{%  extends 'accounts/main.html' %}
+
+{% block content %}
+<form method="POST">
+{% csrf_token %}
+
+    {{customer}}
+  
+    <input class="btn btn-danger" type="submit" value="delete">
+    <a href="{% url 'customer' customer.id %}">Cancel</a>
+</form>
+{% endblock %}

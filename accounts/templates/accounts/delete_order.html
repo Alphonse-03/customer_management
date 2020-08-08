@@ -1,0 +1,14 @@
+{%  extends 'accounts/main.html' %}
+
+{% block content %}
+<form method="POST">
+{% csrf_token %}
+
+    are you sure you want to delete :<br>
+    {{order.product}}<br>
+    
+    ordered by &nbsp; {{order.customer}}
+
+    <input class="btn btn-danger" type="submit" value="Delete">
+</form>
+{% endblock %}

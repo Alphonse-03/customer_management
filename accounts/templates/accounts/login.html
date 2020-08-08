@@ -1,0 +1,17 @@
+{%  extends 'accounts/main.html' %}
+
+{% block content %}
+<form method="POST" action="">
+{% csrf_token %}
+   Username<input type="text" name="username" placeholder="username" required><br>
+   Password<input type="password" name="password" placeholder="password" required><br>
+   {% for message in messages%}
+    {{message}}
+    {% endfor %}
+    <hr>
+    <input class="btn btn-info" type="submit" value="login">
+    
+    <a href="{% url 'registration' %}">register</a><br>
+    <a href="{% url 'reset_password' %}">Reset Password</a>
+</form>
+{% endblock %}

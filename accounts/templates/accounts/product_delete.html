@@ -1,0 +1,9 @@
+{%  extends 'accounts/main.html' %}
+
+{% block content %}
+<form method="POST">
+{% csrf_token %}
+    Are you sure You want to delete {{product}}<br>
+    <input class="btn btn-danger" type="submit" value="Delete">
+</form>
+{% endblock %}
